@@ -121,15 +121,10 @@ textarea {
 <body>
 
 <!-- Background Video -->
-<video autoplay muted loop>
-  <source src="bg.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
 
 <div class="card" id="card">
-  <h2><br> I like you very much, but I can't say this in front of you.thats why i make this a pop-up card, so I'm sending it.
-I think after reading this you will know who I am. If yes, click on yes.</h2>
+  <h2>💘🥰<br>Hi ramisa! I like you very much, but I can't say this in front of you.thats why i make this card, for you so I'm sending it.
+I think after reading this you will know who I am. If yes, click on yes. plzz let me know your answer i waiting for it....</h2>
   <button id="yes" onclick="showReply()">Yes</button>
   <button id="no">No</button>
 </div>
@@ -169,23 +164,19 @@ function showReply() {
   card.innerHTML = `
     <h2>💖 .ohh realy 😲. 💖</h2>
     <p>Send me your cute reply 😍</p>
-    <!-- 1. Ensure method is POST and action is correct -->
-    <form action="https://formsubmit.co/malikahmadhere344a2004@gmail.com" method="POST">
-        
-        <!-- 2. ADD THIS LINE BELOW: This tells FormSubmit to ignore the "Web Server" requirement -->
-        <input type="hidden" name="_url" value="https://malik.github.io">
-
-        <textarea name="message" placeholder="Write your reply here..." required></textarea>
-        <br>
-        <button type="submit">Send ❤️</button>
-        <input type="hidden" name="_captcha" value="false">
-        
-        <!-- Optional: Redirects them to a 'Thank You' page after they click send -->
-        <input type="hidden" name="_next" value="https://formsubmit.co">
-    </form>
+   <textarea id="message" placeholder="Write your reply here..."></textarea>
+    <br>
+    <button onclick="sendWhatsApp()">Send ❤️</button>
   `;
 }
-
+function sendWhatsApp() {
+  const message = document.getElementById("message").value;
+  const phoneNumber = "03256093920"; // 👈 Apna WhatsApp number yahan daalna
+  
+  const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+  
+  window.open(url, "_blank");
+}
 
 /* Floating Hearts */
 function createHeart() {
@@ -209,3 +200,4 @@ setInterval(createHeart, 250);
 
 </body>
 </html>
+
