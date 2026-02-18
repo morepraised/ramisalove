@@ -158,25 +158,6 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = Math.random() * maxY + "px";
 });
 
-/* Show Email Reply Form */
-/* Show Email Reply Form */
-function showReply() {
-  card.innerHTML = `
-    <h2>💖 .ohh realy 😲. 💖</h2>
-    <p>Send me your cute reply 😍</p>
-   <textarea id="message" placeholder="Write your reply here..."></textarea>
-    <br>
-    <button onclick="sendWhatsApp()">Send ❤️</button>
-  `;
-}
-function sendWhatsApp() {
-  const message = document.getElementById("message").value;
-  const phoneNumber = "03256093920"; // 👈 Apna WhatsApp number yahan daalna
-  
-  const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-  
-  window.open(url, "_blank");
-}
 
 /* Floating Hearts */
 function createHeart() {
@@ -196,8 +177,29 @@ function createHeart() {
 
 setInterval(createHeart, 250);
 
+  /* Show Email Reply Form */
+/* Show Email Reply Form */
+function showReply() {
+  card.innerHTML = `
+    <h2>💖 .ohh realy 😲. 💖</h2>
+    <p>Send me your cute reply 😍</p>
+   <textarea id="message" placeholder="Write your reply here..."></textarea>
+    <br>
+    <button onclick="sendWhatsApp()">Send ❤️</button>
+  `;
+}
+function sendWhatsApp() {
+  const message = document.getElementById("message").value;
+  const phoneNumber = "03256093920"; // 👈 Apna WhatsApp number yahan daalna
+  
+  const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+  
+  window.open(url, "_blank");
+}
+
 </script>
 
 </body>
 </html>
+
 
